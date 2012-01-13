@@ -6,7 +6,6 @@ if [ -z "${QUERY_STRING}" ]; then
 	cat << EoXHTML
 <p class="mulog_header">
 	<strong>&#xb5;_log - tumblr proxy</strong>
-	&lt; <a href="${0}?src" alt="src">source</a> &gt;
 	<br>
 	&#91; <a href="http://az-mulog.tumblr.com/" alt="tumblr">http://az-mulog.tumblr.com/</a> &#93;
 </p>
