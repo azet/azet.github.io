@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>azet</title>
+	<!-- 
+	
+		PUBLIC DOMAIN! - as in: take what you like.. 
+
+	-->
+	<style type="text/css">
+		body { margin: 0px; text-align: center; font-family: 'Courier New'; font-size: 14px; }
+		div, p, canvas { margin-top: 75px; margin-left: auto; margin-right: auto; }
+		.bizcard { margin-top: 10%; }
+		.header { font-weight: bold; letter-spacing: 2px; font-size: 16px; }
+		.dynamic { width: 475px; }
+		.quote { font-style: oblique; font-size: 12px; text-align: left; }
+		a { color: #c0c0c0; text-decoration: none; }
+		nav { position: fixed; left: 0%; right: 0%; top: 0px; height: 20px; background-color: #000000; 
+	        word-spacing: 0.4em; padding: 5px; padding-right: 20px; color: #c0c0c0; text-align: right; font-family: arial; font-size: 12px; }
+		footer { font-family: arial; padding: 5px; padding-right: 10px; position: fixed; bottom: 0%; right: 0%; font-size: 8px; }  
+		footer a, .mulog_header a { color: #000000;  text-decoration: underline; }
+
+		/* tumblr stuff */
+		.post div, .post p { margin: 0px; color: #000000; padding: 10px; }
+		.post a { padding: 5px; margin: 5px; font-size: 12px; background-color: #000000; }	
+		h3 { font-size: 14px; text-decoration: underline; padding: 5px; word-spacing: 5px; }
+		li.post { 
+			text-align: left; 
+			list-style-type: none; 
+			color: #000000; 
+			background-color: #FFFFFF; 
+			border-top: 20px solid; 
+			border-bottom: 10px solid; 
+			margin: 5px; 
+		}
+	</style>
+	<script src="/processing-1.3.0.js"></script>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+	<script>
+		$(document).ready(function() {
+			$("a.log").click(
+				function () {
+					$("div.dynamic").html('<p class="mulog_header">..loading..<br>&#91; <a href="http://az-mulog.tumblr.com" alt="mulog">http://az-mulog.tumblr.com</a> &#93;'),
+					$("div.dynamic").load("tumblr_proxy.cgi .post, .mulog_header", function(response, status, xhr) {
+  						if (status == "error") {
+    							var errmsg = "fetching error: ";
+   						 	$("div.dynamic").html(errmsg + xhr.status + " " + xhr.statusText);
+						}
+				});	
+			});
+  			
+		 	$("a.contact").click(
+				function () {
+					$("div.dynamic").html('e-mail<br />azet (at) azet.org<br /><br />jabber (xmpp)<br />azet@jabber.ccc.de');
+        		});
+            
+			$("a.info").click(
+				function () {
+					$("div.dynamic").html("<p>Sorry, i don't have a facebook or twitter account, a guestbook or pictures online and do not like to put too much information on the web. Feel free to contact me via instant messanger or mail tough. You might also be able to get ahold of me in IRCNet and SILCNet.</p><p>CV on request.</p>"); 
+			});	
+		});
+	</script>
+	<nav>
+		<a href="#" class="log">&#xb5;_log</a> / <a href="#" class="info">info</a> / <a href="#" class="contact">contact</a> / <a href="http://github.com/azet">github</a> / <a href="http://soundcloud.com/a_z_e_t">soundcloud</a>
+	</nav>
+	
+	<div class="bizcard">
+		<span class="header">azet</span><br />
+		<span class="subtext">security && systems engineer / programmer / analyst & dedicated freak</span>
+	</div>
+	<div class="dynamic">
+		'I don't understand you,' said Alice. 'It's dreadfully confusing!'
+		'That's the effect of living backwards,' the Queen said kindly: 'it always makes one a little giddy at first --'
+		'Living backwards!' Alice repeated in great astonishment. 'I never heard of such a thing!'
+		'-- but there's one great advantage in it, that one's memory works both ways.'
+		'I'm sure mine only works one way,' Alice remarked. 'I can't remember things before they happen.'
+		'It's a poor sort of memory that only works backwards,' the Queen remarked.
+	</div>
+    
+	<script data-processing-target="pde" type="application/processing">
+                void setup() {
+                        size(450, 200, P3D);
+                        background(255);
+                        smooth();
+                        strokeWeight(1);
+                        frameRate(20);
+			noCursor();
+
+                }
+                void draw() {
+                        stroke(0, 175);
+                        fill(random(0, 150), random(0, 255));
+                        translate(mouseX, mouseY, -375);
+                        rotateY(random(0, 10));
+                        rotateX(random(0, 10));
+                        box(random(0, 400), random(0, 200), random(0, 400));
+                        line(0, 0, random(0, width), random(0, height));
+                }
+
+                /* well.. that wasnt too difficult.. */
+        </script>
+	<canvas id="pde"></canvas>  
+	
+	<footer>
+		>> Valid <a href="http://validator.w3.org/check?uri=azet.org">HTML5</a> & <a href="http://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fazet.org%2F">CSS 2.1</a> using <a href="http://jquery.com/">JQuery</a> and <a href="http://processingjs.org/">Processing.js</a>
+	</footer>
+</body>
+</html>
