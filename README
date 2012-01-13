@@ -1,3 +1,0 @@
-HTML5, jQuery, ProcessingJS and a small bourne shell script
-
-running via varnish-cache (https://www.varnish-cache.org/) on a gatling (http://www.fefe.de/gatling/) and freebsd (.org) powered webserver

@@ -43,7 +43,7 @@
 			$("a.log").click(
 				function () {
 					$("div.dynamic").html('<p class="mulog_header">..loading..<br>&#91; <a href="http://az-mulog.tumblr.com" alt="mulog">http://az-mulog.tumblr.com</a> &#93;'),
-					$("div.dynamic").load("tumblr_proxy.cgi .post, .mulog_header", function(response, status, xhr) {
+					$("div.dynamic").load("syndication_proxy.cgi .post, .mulog_header", function(response, status, xhr) {
   						if (status == "error") {
     							var errmsg = "fetching error: ";
    						 	$("div.dynamic").html(errmsg + xhr.status + " " + xhr.statusText);
@@ -70,6 +70,9 @@
 		<span class="header">azet</span><br />
 		<span class="subtext">security && systems engineer / programmer / analyst & dedicated freak</span>
 	</div>
+	<noscript>
+		<p><strong>well,.. you'll need javascript for this.</strong></p>
+	</noscript>
 	<div class="dynamic">
 		'I don't understand you,' said Alice. 'It's dreadfully confusing!'
 		'That's the effect of living backwards,' the Queen said kindly: 'it always makes one a little giddy at first --'
