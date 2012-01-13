@@ -6,13 +6,6 @@ if [ "${SCRIPT_NAME}" = "/azet" ]; then
 else
 	if [ -z "${QUERY_STRING}" ]; then
         	echo -e "Content-type: text/html\n\n"
-		cat << EoXHTML
-<p class="mulog_header">
-	<strong>&#xb5;_log - syndication proxy</strong>
-	<br>
-	&#91; <a href="http://az-mulog.tumblr.com/" alt="tumblr">http://az-mulog.tumblr.com/</a> &#93;
-</p>
-EoXHTML
 		exec curl -s http://az-mulog.tumblr.com
 	elif [ "${QUERY_STRING}" = "github" ]; then
 		exec curl -s https://github.com/azet
