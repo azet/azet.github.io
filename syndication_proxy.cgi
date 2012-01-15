@@ -3,6 +3,9 @@
 if [ "${SCRIPT_NAME}" = "/azet" ]; then
         echo -e 'HTTP/1.1 301 Moved Permanently'
 	echo Location: https://github.com/azet/${PATH_INFO}
+elif  [ "${SCRIPT_NAME}" = "/day" ]; then
+        echo -e 'HTTP/1.1 301 Moved Permanently'
+        echo Location: http://az-mulog.tumblr.com/day/${PATH_INFO}
 else
 	if [ -z "${QUERY_STRING}" ]; then
         	echo -e "Content-type: text/html\n\n"
