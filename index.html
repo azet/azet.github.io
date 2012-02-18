@@ -56,12 +56,14 @@
 					var githubdisplay = { 'display' : 'run-in' }
 					$("span#github_inc").css(githubdisplay);
 				        $("div.syndication").html("..loading recent github account events..");
-                        		$("div.syndication").load("syndication_proxy.cgi?github .push:first .title", function(response, status, xhr) {
+                        		
+					$("div.syndication").load("syndication_proxy.cgi?github .push:first .title", function(response, status, xhr) {
                                 		if(status == "error") {
                                         		var errmsg = "fetching error: ";
                                         		$("div.dynamic").html(errmsg + xhr.status + " " + xhr.statusText);
                                 		}
                         		});
+
 					
 				});
 			});
@@ -78,7 +80,7 @@
 		});
 	</script>
 	<nav>
-		<a href="#" class="log">&#xb5;_log</a> / <a href="#" class="info">info</a> / <a href="#" class="contact">contact</a> / <a href="http://github.com/azet">github</a> / <a href="http://soundcloud.com/a_z_e_t">soundcloud</a> / <a href="http://discogs.com/user/azet">discogs</a>
+		<a href="http://mulog.azet.org" class="log">&#xb5;_log</a> / <a href="#" class="info">info</a> / <a href="#" class="contact">contact</a> / <a href="http://github.com/azet">github</a> / <a href="http://soundcloud.com/a_z_e_t">soundcloud</a> / <a href="http://discogs.com/user/azet">discogs</a>
 	</nav>
 	
 	<div class="bizcard">
@@ -89,7 +91,7 @@
 		<p><strong>well,.. you'll need javascript support for this.</strong></p>
 	</noscript>
 	<span id="github_inc">last github activity:
-		<div class="syndication"></div>
+		<span class="syndication"></span>
 	</span>
 	<div class="dynamic">
 		'I don't understand you,' said Alice. 'It's dreadfully confusing!'
