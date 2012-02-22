@@ -1,0 +1,284 @@
+<head>
+    <meta charset="utf-8">
+	<title>{Title}</title>
+	<!-- 
+	
+        PUBLIC DOMAIN! - as in: take what you like.. 
+        hosted by tumblr(.com) - try it, its awesome, especially for nerds!
+
+	-->
+	<style type="text/css">
+		body { margin: 0px; font-family: 'Courier New'; font-size: 12px; }
+		div, p, canvas { margin: 25px; margin-left: auto; margin-right: auto; }
+		.bizcard { margin-top: 8%; }
+		.header { font-weight: bold; letter-spacing: 2px; font-size: 16px; }
+		.quote span { font-style: oblique; text-align: left; }
+		a { color: #c0c0c0; text-decoration: none; }
+		nav { position: fixed; left: 0%; right: 0%; top: 0px; height: 20px; background-color: #000000; 
+	        word-spacing: 0.4em; padding: 5px; padding-left: 10px; color: #c0c0c0; font-family: arial; font-size: 12px; }
+		footer { font-family: arial; padding: 5px; padding-right: 10px; position: fixed; bottom: 0%; right: 0%; font-size: 8px; }  
+		div a, footer a, .mulog_header a { color: #000000;  text-decoration: underline; }
+
+		div .post { border-left: 1px dotted #000000; border-bottom: 10px solid #000000; width: 60%; padding: 0px; }
+        div #posts, .post p, .foo, .post .caption, .post h3 { width: auto; padding: 5px; margin-left: 15px; }
+         .source { margin: 0px; padding-bottom: 15px; padding-left: 8%; }
+        
+        
+        pre, code { font-size: 11px; font-family:'Inconsolata','Monaco','Consolas','DejaVu Sans Mono',monospace; border-top: 1px dashed #000000; border-bottom: 1px dashed #000000; padding: 10px; }
+        h2, .t_nav { text-align: center; }
+        ul, li, ol { list-style-type: square; margin: 2.5px; }
+        .tags a { font-style: normal; font-weight: 100; font-size: 10px; text-decoration: none; background-color: #000000; color: #FFFFFF; text-align: right; margin: 0px; padding: 2px; letter-spacing: 0.2em; }
+        .posttime { text-decoration: none; font-size: 6.5pt; text-align: right; margin: 0px; padding: 3pt; border-top: 1px dotted #000000; border-right: 1px solid #000000; }
+        h2 a, .posttime a  { text-decoration: none; }
+	</style>
+    <link rel="stylesheet" type="text/css" href="http://steamdev.com/snippet/css/jquery.snippet.css" />
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="http://steamdev.com/snippet/js/jquery.snippet.js"></script>
+</head>
+<body>
+
+	<nav>
+		<span>
+            <a href="/info">µ.info</a>
+	    </span>
+        
+	</nav>
+	<script>
+        $(document).ready(function(){
+            $("code").snippet("xml",{style:"acid",transparent:true,showNum:true}),
+            $("code.c").snippet("c",{style:"acid",transparent:true,showNum:true}),
+            $("code.ruby").snippet("ruby",{style:"acid",transparent:true,showNum:true}),
+            $("code.php").snippet("php",{style:"acid",transparent:true,showNum:true}),
+            $("code.perl").snippet("perl",{style:"acid",transparent:true,showNum:true});
+        });
+    </script>
+	<div class="bizcard">
+        <h2><a href="http://az-mulog.tumblr.com">{Title}</a></h2>
+	</div>
+	<div class="dynamic">     
+        <div id="posts">
+            {block:Posts}
+                {block:Text}
+                    <div class="post text">
+                    
+                        
+                        {block:HasTags}
+                            <div class="tags" style="font-size: 10px;">
+                                {block:Tags}
+                                        <a href="{TagURL}">#{Tag}</a>
+                                {/block:Tags}
+                            </div>
+                        {/block:HasTags}
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}
+
+                        <div class="foo">{Body}</div>
+                        {block:Date}
+                        <div class="posttime">
+                             posted {TimeAgo} @ <a href="http://en.wikipedia.org/wiki/Unix_time">{Timestamp}</a>  
+                                
+                            </div>
+                        {/block:Date}
+                    </div>
+                {/block:Text}
+
+                {block:Photo}
+                        
+                    <div class="post photo">
+                    
+                        {block:HasTags}
+                            <div class="tags" style="font-size: 10px;">
+                                {block:Tags}
+                                        <a href="{TagURL}">#{Tag}</a>
+                                {/block:Tags}
+                            </div>
+                        {/block:HasTags}
+                       <div class="foo"><img src="{PhotoURL-500}" alt="{PhotoAlt}"/></div>
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                                                {block:Date}
+                        <div class="posttime">
+                             posted {TimeAgo} @ <a href="http://en.wikipedia.org/wiki/Unix_time">{Timestamp}</a> 
+                                
+                            </div>
+                            {/block:Date}
+                    </div>
+                {/block:Photo}
+
+                {block:Photoset}
+                    <div class="post photoset">
+                    
+                        {/block:Date}
+                        {block:HasTags}
+                            <div class="tags" style="font-size: 10px;">
+                                {block:Tags}
+                                        <a href="{TagURL}">#{Tag}</a>
+                                {/block:Tags}
+                            </div>
+                        {/block:HasTags}
+                        <div class="foo">{Photoset-500}</div>
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                        {block:Date}
+                        <div class="posttime">
+                             posted {TimeAgo} @ <a href="http://en.wikipedia.org/wiki/Unix_time">{Timestamp}</a> 
+                                
+                            </div>
+                        {/block:Date}
+                    </div>
+                {/block:Photoset}
+
+                {block:Quote}
+                    <div class="post quote">
+                    
+                        {block:HasTags}
+                            <div class="tags" style="font-size: 10px;">
+                                {block:Tags}
+                                      <a href="{TagURL}">#{Tag}</a>
+                                {/block:Tags}
+                            </div>
+                        {/block:HasTags}
+                        <div class="foo"><span style="font-size: 1.9em;">'</span><span style="font-size: 14px; letter-spacing: 1pt;">{Quote}</span><span style="font-size: 1.8em;">'</span></div>
+                        {block:Source}
+                             <div class="source">&mdash; {Source}</div>
+                        {/block:Source}
+                        {block:Date}
+                        <div class="posttime">
+                             posted {TimeAgo} @ <a href="http://en.wikipedia.org/wiki/Unix_time">{Timestamp}</a> 
+                                
+                            </div>
+                        {/block:Date}
+                    </div>
+                {/block:Quote}
+
+                {block:Link}
+                    <div class="post link">
+                    
+                        {block:HasTags}
+                            <div class="tags" style="font-size: 10px;">
+                                {block:Tags}
+                                        <a href="{TagURL}">#{Tag}</a>
+                                {/block:Tags}
+                            </div>
+                        {/block:HasTags}
+                       <div class="foo">&gt;&gt; <a href="{URL}" class="link" {Target}>{Name}</a></div>
+
+                        {block:Description}
+                            <div class="description">{Description}</div>
+                        {/block:Description}
+                        {block:Date}
+                        <div class="posttime">
+                             posted {TimeAgo} @ <a href="http://en.wikipedia.org/wiki/Unix_time">{Timestamp}</a>  
+                                
+                            </div>
+                        {/block:Date}
+                    </div>
+                {/block:Link}
+
+                {block:Chat}
+                    <div class="post chat">
+                    
+                        {block:HasTags}
+                            <div class="tags" style="font-size: 10px;">
+                                {block:Tags}
+                                        <a href="{TagURL}">#{Tag}</a>
+                                {/block:Tags}
+                            </div>
+                        {/block:HasTags}
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}
+                        <div class="foo">
+                            <div class="chat">
+                                {block:Lines}
+                                    <div class="{Alt} user_{UserNumber}">
+                                        {block:Label}
+                                            <span class="label">{Label}</span>
+                                        {/block:Label}
+    
+                                        {Line}
+                                    </div>
+                                {/block:Lines}
+                            </div>
+                        </div>
+                        {block:Date}
+                        <div class="posttime">
+                            posted {TimeAgo} @ <a href="http://en.wikipedia.org/wiki/Unix_time">{Timestamp}</a>
+                                
+                            </div>
+                        {/block:Date}
+                    </div>
+                {/block:Chat}
+
+                {block:Video}
+                    <div class="post video">
+                    
+                        {block:HasTags}
+                            <div class="tags" style="font-size: 10px;">
+                                {block:Tags}
+                                        <a href="{TagURL}">#{Tag}</a>
+                                {/block:Tags}
+                            </div>
+                        {/block:HasTags}
+                        <div class="foo">{Video-500}</div>
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                        {block:Date}
+                        <div class="posttime">
+                         posted: {TimeAgo} @ <a href="http://en.wikipedia.org/wiki/Unix_time">{Timestamp}</a> 
+                                
+                            </div>
+                        {/block:Date}
+                    </div>
+                {/block:Video}
+
+                {block:Audio}
+                    <div class="post audio">
+                    
+                        {block:HasTags}
+                            <div class="tags" style="font-size: 10px;">
+                                {block:Tags}
+                                        <a href="{TagURL}">#{Tag}</a>
+                                {/block:Tags}
+                            </div>
+                        {/block:HasTags}
+                        <div class="foo">{AudioPlayerBlack}</div>
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                        {block:Date}
+                        <div class="posttime">
+                            posted: {TimeAgo} @ <a href="http://en.wikipedia.org/wiki/Unix_time">{Timestamp}</a> 
+                                
+                            </div>
+                        {/block:Date}
+                    </div>
+                {/block:Audio}
+            {/block:Posts}
+        </div>
+
+        <div class="t_nav"><span>
+            {block:PreviousPage}
+                <a href="{PreviousPage}">&#171;&#171;&#171;</a>
+            {/block:PreviousPage}
+
+            {block:NextPage}
+                <a href="{NextPage}">&#187;&#187;&#187;</a>
+            {/block:NextPage}</span>
+            <div><a href="/archive">- backtrace -</a></div>
+        </div>
+	</div>
+
+	<footer>
+		>> Powered by <a href="http://tumblr.com">Tumblr</a>.
+	</footer>
+</body>
+</html>
