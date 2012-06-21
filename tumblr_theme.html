@@ -14,10 +14,11 @@
 		.header { font-weight: bold; letter-spacing: 2px; font-size: 16px; }
 		.quote span { font-style: oblique; text-align: left; }
 		a { color: #c0c0c0; text-decoration: none; }
-		nav { position: absolute; left: 0%; right: 0%; top: 0px; height: 20px; background-color: #000000; 
+		nav { position: fixed; left: 0%; right: 0%; bottom: 0px; height: 20px; background-color: #000000; 
 	        word-spacing: 0.4em; padding: 5px; padding-left: 10px; color: #c0c0c0; font-family: arial; font-size: 12px; }
-		footer { font-family: arial; padding: 5px; padding-right: 30px; position: fixed; bottom: 0%; right: 0%; font-size: 8px; }  
-		div a, footer a, .mulog_header a { color: #000000;  text-decoration: underline; }
+		footer { font-family: arial; padding: 10px; position: fixed; bottom: 0%; right: 0%; font-size: 8px; color: #FFFFFF; }  
+        footer a { color: #FFFFFF; }
+		div a, .mulog_header a { color: #000000;  text-decoration: underline; }
 
 		div .post { border-left: 1px solid #000000; border-bottom: 10px solid #000000; border-top: 5px solid #000000; width: 60%; padding: 0px; }
         div #posts, .post p, .foo, .post .caption, .post h3 { width: auto; padding: 5px; margin-left: 15px; }
@@ -262,7 +263,7 @@
         <div class="t_nav"><span>
             {block:PreviousPage}
                 <a href="{PreviousPage}">&#171;&#171;&#171;</a>
-            {/block:PreviousPage}
+           {/block:PreviousPage}
 
             {block:NextPage}
                 <a href="{NextPage}">&#187;&#187;&#187;</a>
