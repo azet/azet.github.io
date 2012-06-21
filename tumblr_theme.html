@@ -4,7 +4,7 @@
 	<!-- 
 	
         PUBLIC DOMAIN! - as in: take what you like.. 
-        hosted by tumblr(.com) - try it, its awesome, especially for nerds!
+        hosted by tumblr(.com) - try it, its awesome!
 
 	-->
 	<style type="text/css">
@@ -16,19 +16,18 @@
 		a { color: #c0c0c0; text-decoration: none; }
 		nav { position: absolute; left: 0%; right: 0%; top: 0px; height: 20px; background-color: #000000; 
 	        word-spacing: 0.4em; padding: 5px; padding-left: 10px; color: #c0c0c0; font-family: arial; font-size: 12px; }
-		footer { font-family: arial; padding: 5px; padding-right: 10px; position: fixed; bottom: 0%; right: 0%; font-size: 8px; }  
+		footer { font-family: arial; padding: 5px; padding-right: 30px; position: fixed; bottom: 0%; right: 0%; font-size: 8px; }  
 		div a, footer a, .mulog_header a { color: #000000;  text-decoration: underline; }
 
-		div .post { border-left: 1px dotted #000000; border-bottom: 10px solid #000000; width: 60%; padding: 0px; }
+		div .post { border-left: 1px solid #000000; border-bottom: 10px solid #000000; border-top: 5px solid #000000; width: 60%; padding: 0px; }
         div #posts, .post p, .foo, .post .caption, .post h3 { width: auto; padding: 5px; margin-left: 15px; }
          .source { margin: 0px; padding-bottom: 15px; padding-left: 8%; }
-        
-        
         pre, code { font-size: 11px; font-family:'Inconsolata','Monaco','Consolas','DejaVu Sans Mono',monospace; border-top: 1px dashed #000000; border-bottom: 1px dashed #000000; padding: 10px; }
         h2, .t_nav { text-align: center; }
         ul, li, ol { list-style-type: square; margin: 2.5px; }
-        .tags a { font-style: normal; font-weight: 100; font-size: 10px; text-decoration: none; background-color: #000000; color: #FFFFFF; text-align: right; margin: 0px; padding: 2px; letter-spacing: 0.2em; }
-        .posttime { text-decoration: none; font-size: 6.5pt; text-align: right; margin: 0px; padding: 3pt; border-top: 1px dotted #000000; border-right: 1px solid #000000; }
+        .tags { margin: 0px; border-right: 50px solid #000000; }
+        .tags a { font-style: normal; font-weight: 100; font-size: 10px; text-decoration: none; background-color: #000000; color: #FFFFFF; text-align: right; padding: 2px; letter-spacing: 0.2em; }
+        .posttime { text-decoration: none; font-size: 6.5pt; text-align: right; margin: 0px; padding: 3pt; border-top: 1px solid #000000; border-right: 1px dashed #000000; }
         h2 a, .posttime a  { text-decoration: none; }
 	</style>
     <link rel="stylesheet" type="text/css" href="http://steamdev.com/snippet/css/jquery.snippet.css" />
@@ -36,13 +35,11 @@
     <script src="http://steamdev.com/snippet/js/jquery.snippet.js"></script>
 </head>
 <body>
-
 	<nav>
 		<span>
-            <a href="/info">µ.info</a> / <a href="/ask">µ.ask</a> / <a href="http://azet.org">µ.self</a>
+            <a href="/info">µ.info</a> / <a href="http://azet.org">azet.org</a>
 	    </span>
-        
-	</nav>
+    </nav>
 	<script>
         $(document).ready(function(){
             $("code").snippet("xml",{style:"acid",transparent:true,showNum:true}),
@@ -52,9 +49,6 @@
             $("code.perl").snippet("perl",{style:"acid",transparent:true,showNum:true});
         });
     </script>
-	<div class="bizcard">
-        <h2><a href="http://mulog.azet.org">{Title}</a></h2>
-	</div>
 	<div class="dynamic">     
         <div id="posts">
             {block:Posts}
@@ -278,7 +272,10 @@
 	</div>
 
 	<footer>
-		>> Powered by <a href="http://tumblr.com">Tumblr</a>.
+	    Powered by <a href="http://tumblr.com">Tumblr</a>.
 	</footer>
 </body>
 </html>
+
+
+
