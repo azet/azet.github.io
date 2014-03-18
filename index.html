@@ -17,7 +17,8 @@
 			border-right: 20px solid; 
 			border-top: 20px solid;
 		}
-		a { color: #c0c0c0; text-decoration: none; }
+		a { color: #000000; }
+		nav a { color: #c0c0c0; text-decoration: none; }
 		nav { 
 			position: fixed; left: 0%; right: 0%; top: 0px; height: 20px; 
 			background-color: #000000; 
@@ -56,7 +57,7 @@
             
 			$("a.info").click(
 				function () {
-					$("div.dynamic").html("<p>This page is basically a business card with links.</p><p>Current occupation: Self-employed engineer and consultant for IT-Infrastructure, HPC and security.</p><p>Previous work included among many other things: development on OSS, webapps, systems/backends, infrastructure, monitoring and embedded-systems. Deployment, automation and administration of many different operating systems and technologies, cluster/HA, databases, virtualization, SAN, (high-throughput / low-latency) networking & High Performance Computing. Scaling, testing and securing company assets as well as legacy systems. Auditing & pentesting. Audio production, Audio engineering [...]</p><p>Sorry, I do not like to put too much personal information on the web. Feel free to contact me via instant messanger or mail though. You might also be able to get ahold of me on IRC or SILC.</p><p>CV and Xing information on request.</p>"); 
+					$("div.dynamic").html('<p>This page is basically a business card with links.</p><p>Current occupation: Self-employed engineer and consultant for IT-Infrastructure, HPC and security. see also: <a href="http://lambda.co.at" alt="lambda.co.at">lambda.co.at</a></p><p>Previous work included among many other things: development on OSS, webapps, systems/backends, infrastructure, monitoring and embedded-systems. Deployment, automation and administration of many different operating systems and technologies, cluster/HA, databases, virtualization, SAN, (high-throughput / low-latency) networking & High Performance Computing. Scaling, testing and securing company assets as well as legacy systems. Auditing & pentesting. Audio production, Audio engineering [...]</p><p>Sorry, I do not like to put too much personal information on the web. Feel free to contact me via instant messanger or mail though. You might also be able to get ahold of me on IRC or SILC.</p><p>CV and Xing information on request.</p>'); 
 			});	
 		});
 	</script>
